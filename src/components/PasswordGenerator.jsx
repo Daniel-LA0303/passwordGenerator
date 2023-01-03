@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import { motion } from 'framer-motion';
 const PasswordGenerator = () => {
 
     const[password, setPassword]=useState('');
@@ -54,8 +54,11 @@ const PasswordGenerator = () => {
     }
 
     return (
-        <div
+        <motion.div
             className=' bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 focus:ring-4 focus:outline-none focus:ring-lime-200  p-5 rounded-lg text-gray-900 text-2xl font-light'
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
         >
             <p className=' text-center my-5'>Password Generator</p>
             <p className=' text-center my-2 h-10 text-xl text-gray-900 font-light'>{password}</p>
@@ -132,7 +135,7 @@ const PasswordGenerator = () => {
                 </div>
             </div>
             
-        </div>
+        </motion.div>
   )
 }
 
