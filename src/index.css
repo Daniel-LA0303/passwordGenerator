@@ -11,3 +11,27 @@
   width: 90%;
 }
 
+label {
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  position: absolute;
+  transform: scale(0);
+}
+
+.checkbox {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #e7e7e7;
+  transition: all 0.35s;
+}
+
+input:checked ~ .checkbox {
+  transform: rotate(45deg);
+  width: 10px;
+  border-color: #bef264;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
