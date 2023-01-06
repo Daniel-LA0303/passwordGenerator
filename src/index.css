@@ -8,9 +8,13 @@
   font-weight: 400;
 }
 .form{
-  width: 90%;
+  width: 50%;
 }
-
+@media (max-width: 700px) {
+  .form {
+    width: 90%;
+  }
+}
 label {
   cursor: pointer;
 }
