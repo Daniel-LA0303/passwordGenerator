@@ -24,32 +24,31 @@ const PasswordGenerator = () => {
             returns
         }
 
+
         let characters= ''
         if(uppercase){
             characters='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-            console.log(characters);
         }else{
             characters=characters
         }
         if(lowercase){
             characters=characters+'abcdefghijklmnopqrstuvwxyz'
-            console.log(characters);
         }else{
             characters=characters
         }
         if(numbers){
             characters=characters+'0123456789'
-            console.log(characters);
         }else{
             characters=characters
         }
         if(symbols){
             characters=characters+'?¿+*_-)(/&%$#![]'
-            console.log(characters);
         }else{
             characters=characters
         }
-
+        if(!uppercase && !lowercase && !numbers && !symbols){
+            characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?¿+*_-)(/&%$#![]'
+        }
         let result1= ' ';
         const charactersLength = characters.length;
         for ( let i = 0; i < number; i++ ) {
@@ -67,7 +66,7 @@ const PasswordGenerator = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
         >
-            <p className=' text-center my-5'>Password Generator</p>
+            <p className='text-center my-1'>Password Generator</p>
             {password ? 
                 <motion.p 
                     className=' text-center my-2 h-10 text-xl text-gray-900 font-light'
@@ -160,7 +159,7 @@ const PasswordGenerator = () => {
                         </div>
                     </form>
                 </div>
-                <p className=' text-center text-sm'>Created by Daniel</p>
+                <p className=' text-center text-sm'>Created by Code-LA</p>
             </div>
             
         </motion.div>
